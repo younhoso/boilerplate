@@ -14,7 +14,9 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
-const RootLayout = ({ children }: { children: ReactNode }) => {
+interface Props extends PropsWithChildren {}
+
+const RootLayout = ({ children }: Props) => {
   return (
     <html lang="ko">
       <body className={PRETENDARD.className}>

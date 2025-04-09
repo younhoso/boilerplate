@@ -1,10 +1,10 @@
 import { TemplateStyled } from '@/styles/pages/TemplateStyled';
 import { cx } from '@/utils/cx';
 
-interface Props {}
+interface Props extends PropsWithChildren {}
 
-const Template = ({}: Props) => {
-  return <TemplateStyled className={cx('')}></TemplateStyled>;
+const Template = ({ children }: Props) => {
+  return <TemplateStyled className={cx('')}>{children}</TemplateStyled>;
 };
 
 export default Template;
