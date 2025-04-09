@@ -1,4 +1,3 @@
-// lib/repositories/types.ts
 export interface UserRepository {
   getUser(id: string): Promise<any>;
 }

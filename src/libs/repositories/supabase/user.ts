@@ -1,4 +1,3 @@
-// lib/repositories/supabase/user.ts
 import type { UserRepository } from '../types';
 
 export const user: UserRepository = {
