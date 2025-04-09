@@ -1,5 +1,5 @@
 import { DashboardPageStyled } from '@/styles/pages/DashboardStyled';
-import cx from '@/utils';
+import { cx } from '@/utils/cx';
 
 interface Props {}
 

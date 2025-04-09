@@ -1,5 +1,5 @@
 import { TemplateStyled } from '@/styles/pages/TemplateStyled';
-import cx from '@/utils';
+import { cx } from '@/utils/cx';
 
 interface Props {}
 

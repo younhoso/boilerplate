@@ -1,6 +1,6 @@
 import { user } from '@/libs/repositories/supabase/user';
 import { MainPageStyled } from '@/styles/pages/MainPageStyled';
-import cx from '@/utils';
+import { cx } from '@/utils/cx';
 
 interface Props {}
 

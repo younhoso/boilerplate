@@ -1,5 +1,5 @@
 import { HistoryPageStyled } from '@/styles/pages/HistoryPageStyled';
-import cx from '@/utils';
+import { cx } from '@/utils/cx';
 
 interface Props {}
 
