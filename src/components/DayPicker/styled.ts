@@ -27,22 +27,28 @@ export const DayPickerStyled = styled.div<DayPickerProps>`
   .rdp-day {
     width: 36px;
     height: 36px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     cursor: pointer;
     transition: all 0.2s ease;
-    &:hover {
-      background-color: #f0f0f0;
+    button {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      &:hover {
+        background-color: #f0f0f0;
+      }
     }
 
     &.rdp-selected {
-      background-color: #2563eb;
-      color: white;
+      button {
+        background-color: #2563eb;
+        color: white;
+      }
     }
     &.rdp-today {
-      border: 1px solid #2563eb;
+      button {
+        border: 1px solid #2563eb;
+      }
     }
   }
 `;
