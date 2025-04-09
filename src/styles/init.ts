@@ -1,6 +1,6 @@
-import { memo } from "react";
+import { memo } from 'react';
 
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const InitGlobalStyled = memo(createGlobalStyle`
  * {
@@ -45,6 +45,7 @@ export const InitGlobalStyled = memo(createGlobalStyle`
   }
   
   button{
+    cursor: pointer;
     background-color: transparent;
   }
 

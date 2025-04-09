@@ -6,9 +6,9 @@
       "",
       "import styled from 'styled-components';",
       "",
-      "interface ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Props {}",
+      "interface ${TM_DIRECTORY/(.*\\/)?([^\\/]+)$/${2:/pascalcase}/}Props {}",
       "",
-      "export const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} = styled.div<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Props>``;",
+      "export const ${TM_DIRECTORY/(.*\\/)?([^\\/]+)$/${2:/pascalcase}/}Styled = styled.div<${TM_DIRECTORY/(.*\\/)?([^\\/]+)$/${2:/pascalcase}/}Props>``;",
     ],
   },
 

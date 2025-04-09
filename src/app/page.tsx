@@ -1,3 +1,4 @@
+import MyDatePicker from '@/components/DayPicker';
 import KakaoLoginButton from '@/components/KakaoLoginButton';
 import UserProfile from '@/components/UserProfile';
 import { MainPageStyled } from '@/styles/pages/MainPageStyled';
@@ -10,6 +11,7 @@ const MainPage = async ({}: Props) => {
     <MainPageStyled className={cx('mainPage')}>
       <UserProfile />
       <KakaoLoginButton />
+      <MyDatePicker />
     </MainPageStyled>
   );
 };
