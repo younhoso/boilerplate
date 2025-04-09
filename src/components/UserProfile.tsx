@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import { User } from '@/types/user';
 import { supabase } from '@/utils/supabase/supabaseClient';
 
+import { Avatar, AvatarFallback, AvatarImage } from './Avatar';
+
 const UserProfile = () => {
   const [users, setUsers] = useState<User | null>(null);
 
@@ -43,14 +45,11 @@ const UserProfile = () => {
     <div>
       {users && (
         <>
-          {/* <Avatar>
-            <AvatarImage src={users.identities[0].identity_data.avatar_url} />
-            <AvatarFallback>사용자</AvatarFallback>
-          </Avatar> */}
-          <div>
-            <p>{users.identities[0].identity_data.name}</p>
-            <p>{users?.email}</p>
-          </div>
+          <Avatar>
+            <AvatarImage src={''} alt="required" />
+            <AvatarFallback>{users.identities[0].identity_data.name}</AvatarFallback>
+            <AvatarFallback>{users?.email}</AvatarFallback>
+          </Avatar>
           <button onClick={handleLogout}>로그아웃</button>
         </>
       )}
