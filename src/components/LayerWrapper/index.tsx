@@ -5,7 +5,7 @@ import { LayerWrapperStyled } from './styled';
 interface Props {}
 
 const LayerWrapper = ({}: Props) => {
-  return <LayerWrapperStyled className={cx('')}></LayerWrapperStyled>;
+  return <LayerWrapperStyled className={cx('wrapper')}></LayerWrapperStyled>;
 };
 
 export default LayerWrapper;
