@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 interface UserMetadata {
   avatar_url: string;
   email: string;
@@ -41,6 +43,17 @@ interface Identity {
 interface AppMetadata {
   provider: string;
   providers: string[];
+}
+
+export interface UserRow {
+  profile: ReactElement;
+  name: string;
+  email: string;
+  phone: string;
+  status: string;
+  role: string;
+  joinedAt: string;
+  actions: ReactElement;
 }
 
 export interface User {
