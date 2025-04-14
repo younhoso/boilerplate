@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 interface AvatarProps {}
 
 interface AvatarImageProps {
-  resize: boolean;
+  resize?: boolean;
 }
 
 interface AvatarFallbackProps {}

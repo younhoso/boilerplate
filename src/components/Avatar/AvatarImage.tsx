@@ -14,7 +14,7 @@ interface Props {
   className?: string;
 }
 
-const AvatarImage = ({ src = '', alt = '', resize = false, ...rest }: Props) => {
+const AvatarImage = ({ src = '', alt = '', resize = false || undefined, ...rest }: Props) => {
   return (
     <AvatarImageStyled resize={resize} className={cx('avatarImage')}>
       <Image src={src} alt={alt} {...rest} />
