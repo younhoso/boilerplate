@@ -10,7 +10,7 @@ import { TableStyled } from './styled';
 interface Props extends PropsWithChildren {}
 
 const BaseTable = ({ children }: Props) => {
-  return <TableStyled className={cx('')}>{children}</TableStyled>;
+  return <TableStyled className={cx('table')}>{children}</TableStyled>;
 };
 
 export const Table = Object.assign(BaseTable, {

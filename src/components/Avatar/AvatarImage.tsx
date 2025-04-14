@@ -7,15 +7,16 @@ import { AvatarImageStyled } from './styled';
 interface Props {
   src: string | StaticImageData;
   alt: string;
+  resize?: boolean;
   width?: number;
   height?: number;
   fill?: boolean;
   className?: string;
 }
 
-const AvatarImage = ({ src = '', alt = '', ...rest }: Props) => {
+const AvatarImage = ({ src = '', alt = '', resize = false, ...rest }: Props) => {
   return (
-    <AvatarImageStyled className={cx('avatarImage')}>
+    <AvatarImageStyled resize={resize} className={cx('avatarImage')}>
       <Image src={src} alt={alt} {...rest} />
     </AvatarImageStyled>
   );

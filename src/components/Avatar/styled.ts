@@ -1,10 +1,12 @@
 'use client';
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface AvatarProps {}
 
-interface AvatarImageProps {}
+interface AvatarImageProps {
+  resize: boolean;
+}
 
 interface AvatarFallbackProps {}
 
@@ -14,11 +16,22 @@ export const AvatarImageStyled = styled.div<AvatarImageProps>`
   position: relative;
   width: 100%;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 이미지가 컨테이너에 맞게 조정되도록 */
-  }
+  ${({ resize }) =>
+    resize
+      ? css`
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        `
+      : css`
+          img {
+            width: auto;
+            height: auto;
+            object-fit: contain;
+          }
+        `}
 `;
 
 export const AvatarFallbackStyled = styled.div<AvatarFallbackProps>``;

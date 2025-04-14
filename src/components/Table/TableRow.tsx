@@ -1,11 +1,11 @@
 import { cx } from '@/utils/cx';
 
-import { TableHeadStyled } from './styled';
+import { TableRowStyled } from './styled';
 
 interface Props extends PropsWithChildren {}
 
-const TableHead = ({ children }: Props) => {
-  return <TableHeadStyled className={cx('')}>{children}</TableHeadStyled>;
+const TableRow = ({ children }: Props) => {
+  return <TableRowStyled className={cx('')}>{children}</TableRowStyled>;
 };
 
-export default TableHead;
+export default TableRow;
