@@ -18,17 +18,20 @@ export const TableStyled = styled.div<TableProps>``;
 
 export const TableHeadStyled = styled.div<TableHeadProps>`
   background-color: #f4f6f8;
+  border-top: 1px solid #333;
   font-weight: bold;
   text-align: left;
 `;
 
 export const TableHeaderCellStyled = styled.div<TableHeaderCellProps>`
-  min-width: 180px;
+  min-width: 160px;
   padding: 12px 20px;
-  text-align: left;
   font-size: 14px;
   color: #333;
   text-align: center;
+  &:first-child {
+    min-width: auto;
+  }
 `;
 
 export const TableBodyStyled = styled.div<TableBodyProps>`
@@ -36,13 +39,14 @@ export const TableBodyStyled = styled.div<TableBodyProps>`
 `;
 
 export const TableBodyCellStyled = styled.div<TableBodyCellProps>`
-  min-width: 180px;
+  min-width: 160px;
   padding: 10px 20px;
-  text-align: left;
   font-size: 14px;
   color: #666;
-  word-break: break-word;
   text-align: center;
+  &:first-child {
+    min-width: auto;
+  }
 `;
 
 export const TableRowStyled = styled.div<TableRowProps>`

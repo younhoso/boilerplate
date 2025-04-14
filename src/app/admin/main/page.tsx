@@ -8,7 +8,7 @@ interface Props {}
 
 const AdminMain = ({}: Props) => {
   return (
-    <AdminMainStyled className={cx('')}>
+    <AdminMainStyled className={cx('adminMain')}>
       <Table>
         <Head>
           <Row>

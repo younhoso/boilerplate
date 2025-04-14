@@ -1,10 +1,11 @@
 import { AvatarImage } from '@/components/Avatar';
+import CheckBox from '@/components/CheckBox';
 import { UserRow } from '@/types/user';
 
 import profileImg from '../../../../public/images/profile.png';
 
 export const headers = [
-  { label: <input type="checkbox" />, key: 'checkbox' },
+  { label: <CheckBox />, key: 'checkbox' },
   { label: '프로필', key: 'profile' },
   { label: '이름', key: 'name' },
   { label: '이메일', key: 'email' },
@@ -17,7 +18,7 @@ export const headers = [
 
 export const data: UserRow[] = [
   {
-    checkbox: <input type="checkbox" />,
+    checkbox: <CheckBox />,
     profile: <AvatarImage width={60} height={60} src={profileImg} alt="Avatar" />,
     name: '홍길동',
     email: 'hong@example.com',
