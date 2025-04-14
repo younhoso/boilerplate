@@ -25,12 +25,25 @@ export const TableHeadStyled = styled.div<TableHeadProps>`
 
 export const TableHeaderCellStyled = styled.div<TableHeaderCellProps>`
   min-width: 160px;
+  width: 100%;
   padding: 12px 20px;
   font-size: 14px;
   color: #333;
   text-align: center;
+  display: flex;
+  justify-content: center;
+
   &:first-child {
     min-width: auto;
+    &::after {
+      display: none;
+    }
+  }
+
+  &:last-child {
+    &::after {
+      display: none;
+    }
   }
 `;
 
@@ -40,19 +53,36 @@ export const TableBodyStyled = styled.div<TableBodyProps>`
 
 export const TableBodyCellStyled = styled.div<TableBodyCellProps>`
   min-width: 160px;
+  width: 100%;
   padding: 10px 20px;
   font-size: 14px;
   color: #666;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .avatarImage {
+    text-align: center;
+  }
+
   &:first-child {
     min-width: auto;
+    &::after {
+      display: none;
+    }
+  }
+
+  &:last-child {
+    &::after {
+      display: none;
+    }
   }
 `;
 
 export const TableRowStyled = styled.div<TableRowProps>`
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   border-bottom: 1px solid #d2d6db;
 `;
 
