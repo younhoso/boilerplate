@@ -1,24 +1,17 @@
 'use client';
 
-import { useState } from 'react';
 import { DayPicker } from 'react-day-picker';
+
+import { Mode, PickerProps } from '@/types/dayPicker';
 
 import { DayPickerStyled } from './styled';
 
-const MyDatePicker = () => {
-  const [selected, setSelected] = useState<Date>();
-
+const DatePicker = <M extends Mode>({ ...rest }: PickerProps<M>) => {
   return (
     <DayPickerStyled>
-      <DayPicker
-        animate
-        mode="single"
-        selected={selected}
-        onSelect={setSelected}
-        footer={selected ? `Selected: ${selected.toLocaleDateString()}` : 'Pick a day.'}
-      />
+      <DayPicker {...rest} />
     </DayPickerStyled>
   );
 };
 
-export default MyDatePicker;
+export default DatePicker;
