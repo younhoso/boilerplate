@@ -65,3 +65,5 @@ export const Label = styled.label<LabelProps>`
     top: 0;
   }
 `;
+
+export const CheckBoxGroupStyled = styled.div``;

@@ -1,3 +1,4 @@
+import { CheckBoxGroup, CheckBoxGroupItem } from '@/components/CheckBox';
 import { Body, BodyCell, Head, HeaderCell, Row, Table } from '@/components/Table';
 import { AdminMainStyled } from '@/styles/pages/AdminMainStyled';
 import { cx } from '@/utils/cx';
@@ -9,6 +10,11 @@ interface Props {}
 const AdminMain = ({}: Props) => {
   return (
     <AdminMainStyled className={cx('adminMain')}>
+      <CheckBoxGroup>
+        <CheckBoxGroupItem label="Option 1" />
+        <CheckBoxGroupItem label="Option 2" />
+        <CheckBoxGroupItem label="Option 3" />
+      </CheckBoxGroup>
       <Table>
         <Head>
           <Row>

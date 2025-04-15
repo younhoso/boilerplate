@@ -1,55 +1,46 @@
 'use client';
 
-import { Check } from 'iconoir-react';
 import { useState } from 'react';
+import React from 'react';
 
 import { cx } from '@/utils/cx';
 
-import { CheckBoxStyled, CustomCheckBox, HiddenCheckBox, Label } from './styled';
+import CheckBoxGroupItem from './CheckBoxGroupItem';
+import CheckBoxItem from './CheckBoxItem';
+import { CheckBoxGroupStyled } from './styled';
 
-interface Props {
-  label?: string;
-  checked?: boolean;
-  disabled?: boolean;
-  className?: string;
-  onChange?: (checked: boolean) => void;
+interface Props extends PropsWithChildren {
+  isGroupControlled?: boolean; // 그룹 상태를 관리할지 여부를 결정
 }
 
-const CheckBox = ({ label, checked = false, disabled = false, className, onChange }: Props) => {
-  const [isChecked, setIsChecked] = useState(checked);
+const BaseCheckBoxGroupItems = ({ isGroupControlled = true, children }: Props) => {
+  const [isChecked, setIsChecked] = useState(false);
 
-  const handleChange = () => {
-    setIsChecked(!isChecked);
-    if (onChange) {
-      onChange(!isChecked);
+  // 상태 변경 함수
+  const handleCheckChange = (checked: boolean) => {
+    if (isGroupControlled) {
+      setIsChecked(checked); // 그룹 상태 관리
     }
   };
 
-  const checkboxId = 'checkbox-' + Math.random().toString(36).slice(2, 11); // 동적으로 고유한 ID 생성
-
   return (
-    <CheckBoxStyled className={cx('checkbox-container', className)} onChange={handleChange}>
-      <HiddenCheckBox id={checkboxId} type="checkbox" checked={isChecked} disabled={disabled} />
-      <CustomCheckBox
-        className={cx('custom', `custom-${className}`)}
-        checked={isChecked}
-        onClick={handleChange}
-        disabled={disabled}
-      >
-        {isChecked && <Check />}
-      </CustomCheckBox>
-
-      {label && (
-        <Label
-          htmlFor={checkboxId}
-          className={cx('label', `label-${className}`)}
-          disabled={disabled}
-        >
-          {label}
-        </Label>
-      )}
-    </CheckBoxStyled>
+    <CheckBoxGroupStyled className={cx('checkBoxGroup')}>
+      {React.Children.map(children, child => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child as React.ReactElement, {
+            isGroupControlled: isGroupControlled,
+            checked: isGroupControlled ? isChecked : null, // 그룹 상태 전달
+            onChange: handleCheckChange, // 상태 변경 함수 전달
+          });
+        }
+      })}
+    </CheckBoxGroupStyled>
   );
 };
 
-export default CheckBox;
+export const CheckBoxGroup = Object.assign(BaseCheckBoxGroupItems, {
+  CheckBoxGroupItem,
+  CheckBoxItem,
+});
+
+export { CheckBoxGroupItem, CheckBoxItem };
