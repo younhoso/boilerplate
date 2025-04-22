@@ -6,6 +6,8 @@ export const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
 );
 
+console.log('supabase', supabase);
+
 // 카카오톡 로그인 함수
 export const handleKakaoLogin = async () => {
   try {

@@ -35,6 +35,7 @@ export const TableHeaderCellStyled = styled.div<TableHeaderCellProps>`
 
   &:first-child {
     min-width: auto;
+    width: auto;
     &::after {
       display: none;
     }
@@ -67,6 +68,7 @@ export const TableBodyCellStyled = styled.div<TableBodyCellProps>`
 
   &:first-child {
     min-width: auto;
+    width: auto;
     &::after {
       display: none;
     }
