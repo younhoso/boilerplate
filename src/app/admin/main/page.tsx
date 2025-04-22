@@ -27,7 +27,9 @@ const AdminMain = ({}: Props) => {
         <Head>
           <Row>
             {headers.map(({ label, key }) => (
-              <HeaderCell key={key}>{label}</HeaderCell>
+              <HeaderCell key={key} justify="flex-start">
+                {label}
+              </HeaderCell>
             ))}
           </Row>
         </Head>
@@ -35,7 +37,9 @@ const AdminMain = ({}: Props) => {
           {data.map((item, rowIdx) => (
             <Row key={rowIdx}>
               {headers.map(({ key }) => (
-                <BodyCell key={key}>{item[key]}</BodyCell>
+                <BodyCell key={key} justify="flex-start">
+                  {item[key]}
+                </BodyCell>
               ))}
             </Row>
           ))}

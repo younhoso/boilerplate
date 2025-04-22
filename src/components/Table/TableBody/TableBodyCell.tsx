@@ -2,10 +2,16 @@ import { cx } from '@/utils/cx';
 
 import { TableBodyCellStyled } from '../styled';
 
-interface Props extends PropsWithChildren {}
+interface Props extends PropsWithChildren {
+  justify?: 'center' | 'flex-start' | 'flex-end';
+}
 
-const TableBodyCell = ({ children }: Props) => {
-  return <TableBodyCellStyled className={cx('bodyCell')}>{children}</TableBodyCellStyled>;
+const TableBodyCell = ({ justify, children }: Props) => {
+  return (
+    <TableBodyCellStyled justify={justify} className={cx('bodyCell')}>
+      {children}
+    </TableBodyCellStyled>
+  );
 };
 
 export default TableBodyCell;

@@ -2,10 +2,16 @@ import { cx } from '@/utils/cx';
 
 import { TableHeaderCellStyled } from '../styled';
 
-interface Props extends PropsWithChildren {}
+interface Props extends PropsWithChildren {
+  justify?: 'center' | 'flex-start' | 'flex-end';
+}
 
-const TableHeaderCell = ({ children }: Props) => {
-  return <TableHeaderCellStyled className={cx('')}>{children}</TableHeaderCellStyled>;
+const TableHeaderCell = ({ justify, children }: Props) => {
+  return (
+    <TableHeaderCellStyled justify={justify} className={cx('')}>
+      {children}
+    </TableHeaderCellStyled>
+  );
 };
 
 export default TableHeaderCell;

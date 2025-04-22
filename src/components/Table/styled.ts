@@ -2,15 +2,21 @@
 
 import styled from 'styled-components';
 
+type JustifyType = 'center' | 'flex-start' | 'flex-end';
+
 interface TableProps {}
 
 interface TableHeadProps {}
 
-interface TableHeaderCellProps {}
+interface TableHeaderCellProps {
+  justify?: JustifyType;
+}
 
 interface TableBodyProps {}
 
-interface TableBodyCellProps {}
+interface TableBodyCellProps {
+  justify?: JustifyType;
+}
 
 interface TableRowProps {}
 
@@ -31,7 +37,7 @@ export const TableHeaderCellStyled = styled.div<TableHeaderCellProps>`
   color: #333;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: ${({ justify = 'flex-start' }) => justify};
 
   &:first-child {
     min-width: auto;
@@ -60,10 +66,11 @@ export const TableBodyCellStyled = styled.div<TableBodyCellProps>`
   color: #666;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: ${({ justify = 'flex-start' }) => justify};
 
   .avatarImage {
-    text-align: center;
+    text-align: ${({ justify = 'flex-start' }) =>
+      justify === 'center' ? 'center' : justify === 'flex-end' ? 'right' : 'left'};
   }
 
   &:first-child {
