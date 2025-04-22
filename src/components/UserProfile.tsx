@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 import { User } from '@/types/user';
-import { supabase } from '@/utils/supabase/supabaseClient';
+import { supabase } from '@/utils/supabase/client';
 
 import { Avatar, AvatarFallback, AvatarImage } from './Avatar';
 
