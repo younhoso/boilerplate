@@ -25,3 +25,10 @@ export const fontWeight = {
   medium: 500,
   bold: 700,
 };
+
+export const theme = {
+  fontSizes,
+  fontWeight,
+};
+
+export type Theme = typeof theme;
