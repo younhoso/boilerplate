@@ -7,5 +7,6 @@ export default function ModalProvider({ children }: { children: ReactNode }) {
     return null;
   }
   const node = document.querySelector("#modalPortal") as Element;
+  if (!node) return null;
   return reactDom.createPortal(children, node);
 }
