@@ -1,7 +1,8 @@
 import { IconData } from '@/stories/shared/types/icon';
-import cx from '@/utils';
+
 
 import { IconStyled } from './styled';
+import { cx } from '@/utils/cx';
 
 export default function Icon({ icon, label }: IconData) {
   return (

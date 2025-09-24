@@ -1,9 +1,10 @@
 import React from 'react';
 
 import Button from '@/stories/shared/ui/Button';
-import cx from '@/utils';
+
 
 import { HeaderStyled } from './styled';
+import { cx } from '@/utils/cx';
 
 interface User {
   name: string;

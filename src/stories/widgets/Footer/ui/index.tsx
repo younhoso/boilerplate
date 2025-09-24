@@ -1,5 +1,6 @@
-import cx from '@/utils';
 
+
+import { cx } from '@/utils/cx';
 import { FooterStyled } from './styled';
 
 export default function Footer() {

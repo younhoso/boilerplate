@@ -1,5 +1,6 @@
-import cx from '@/utils';
 
+
+import { cx } from '@/utils/cx';
 import type { IconData } from '../../types';
 import Icon from './Icon';
 import { IconsStyled } from './styled';

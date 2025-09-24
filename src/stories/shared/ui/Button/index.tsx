@@ -1,9 +1,8 @@
 import React from 'react';
 
-import cx from '@/utils';
-
 import Icon from '../Icons/Icon';
 import { ButtonStyled } from './styled';
+import { cx } from '@/utils/cx';
 
 interface ButtonProps extends PropsWithChildren {
   label?: string;

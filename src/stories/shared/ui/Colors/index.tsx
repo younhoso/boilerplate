@@ -1,5 +1,6 @@
-import cx from '@/utils';
 
+
+import { cx } from '@/utils/cx';
 import { Color } from '../../types';
 import { ColorsInnerStyled, ColorsStyled } from './styled';
 

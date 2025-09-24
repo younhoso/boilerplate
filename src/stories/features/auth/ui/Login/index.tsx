@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import cx from '@/utils';
 
 import { login } from '../../api/login';
 import { useAuth } from '../../model/authState';
 import { LoginStyled } from './styled';
+import { cx } from '@/utils/cx';
 
 // 상태 관리
 
