@@ -1,24 +1,6 @@
-# 강청크루 front
+# README.md
 
-강청크루 front 서비스 입니다.
-
-## 🏃강청크루 서비스 소개🏸
- 강청크루 스포츠 매칭 플랫폼\
-"비슷한 실력끼리 더 재밌게!!🔥"
-
-강청크루에서 즐기는 팀 단위 스포츠,\
-더 나은 경기를 위해 이제는 실력에 맞게 공정하게 매칭해드립니다.
-
-경기 후 피드백을 통해 레벨이 자동 보정되며,\
-매번 균형 잡힌 매치업으로 운동의 재미를 더해보세요!
-
-## Getting Started
-
-### • 필수 환경
-
-[Node.js v22.14.0](https://gbcgc.atlassian.net/l/cp/5qXF2ERJ) 설치 방법은 공식 문서를 참고하세요.
-
-[Yarn v1.22.21](https://gbcgc.atlassian.net/wiki/spaces/SCRUM/pages/12615715/NODE+NVM+-#Node.js%EB%A5%BC-%EC%84%A4%EC%B9%98%ED%95%9C-%ED%9B%84-yarn%EC%9D%84-%EC%84%A4%EC%B9%98) 설치 방법은 여기에서 확인하세요.
+이 파일은 개발자가 작업할 때 참고하는 가이드입니다.
 
 ### • package.json 있는 의존성 라이브러리 설치
 
@@ -82,21 +64,23 @@ yarn storybook
 
 husky 초기화 (husky.sh 파일 생성)
 
-```bash
+```bash 패키지 설치
+npm install -D husky lint-staged
+```
+
+```bash husky 초기화
 npx husky install
 ```
 
-pre-commit 훅 다시 추가
-
-```bash
-npx husky add .husky/pre-commit "npx lint-staged"
-```
-
-git commit 테스트
-
-```bash
-git add .
-git commit -m "husky test"
+```json package.json에 설정 추가
+{
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": ["eslint --fix", "prettier --write"]
+  }
+}
 ```
 
 이제 commit 전에 lint & prettier가 자동으로 실행 됩니다! 🚀🔥

@@ -1,4 +1,14 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx lint-staged
+# NVM Node 환경 로드 (유연한 방식)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+echo "🔍 1/3 린트 검사 중..."
+npx lint-staged || exit 1
+
+echo "🔍 2/3 타입 체크 중..."
+npx tsc --noEmit || exit 1
+
+echo "✅ pre-commit 검사 완료!"

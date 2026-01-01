@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# NVM Node 환경 로드
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+echo "🏗️  빌드 검증 중... (push 전 최종 확인)"
+npm run build || exit 1
+
+echo "✅ 빌드 성공! push를 진행합니다."
